@@ -17,6 +17,6 @@ public class RandomTest {
         SplittableRandom random = new SplittableRandom();
         System.out.println(random.nextInt(5));
         Unsafe unsafe = Unsafe.getUnsafe();
-        unsafe.compareAndSwapInt(1,1,1,1);
+        unsafe.compareAndSwapInt(1, 1, 1, 1);
     }
 }
