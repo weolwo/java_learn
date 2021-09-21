@@ -17,7 +17,7 @@ public class PrizeConfig {
 
     private String prizeName;
 
-    private BigDecimal amount;
+    private BigDecimal prizeAmount;
 
     private double probability;
 

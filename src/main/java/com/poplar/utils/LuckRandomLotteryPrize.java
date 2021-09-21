@@ -29,7 +29,7 @@ public class LuckRandomLotteryPrize {
         double totalProbability = 0;
         totalProbability = configList.stream().map(PrizeConfig::getProbability).reduce(0.0, Double::sum);
         //计算每个奖品的概率区间
-        ArrayList<Double> sortedPrizeProbabilityList = new ArrayList<>(configList.size());
+        ArrayList<Double> sortedPrizeProbabilityList = new ArrayList<>(configList.size() + 1);
         //临时总概率
         double tempTotalProbability = 0;
         for (PrizeConfig prizeConfig : configList) {
@@ -47,7 +47,7 @@ public class LuckRandomLotteryPrize {
     }
 
     public static void main(String[] args) {
-       List<PrizeConfig> configList = new ArrayList<>();
+        List<PrizeConfig> configList = new ArrayList<>();
         configList.add(new PrizeConfig(1, "HUAWEI P50 Pro", new BigDecimal("6488"), 0.2, 10));
         configList.add(new PrizeConfig(2, "IPHONE 13 Pro", new BigDecimal("7999"), 0.2, 10));
         configList.add(new PrizeConfig(3, "HUAWEI MATE40 Pro", new BigDecimal("6288"), 0.2, 10));
