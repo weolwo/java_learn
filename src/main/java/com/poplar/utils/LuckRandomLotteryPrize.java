@@ -26,8 +26,7 @@ public class LuckRandomLotteryPrize {
         }
 
         //总概率
-        double totalProbability = 0;
-        totalProbability = configList.stream().map(PrizeConfig::getProbability).reduce(0.0, Double::sum);
+        double totalProbability = configList.stream().map(PrizeConfig::getProbability).reduce(0.0, Double::sum);
         //计算每个奖品的概率区间
         ArrayList<Double> sortedPrizeProbabilityList = new ArrayList<>(configList.size() + 1);
         //临时总概率
