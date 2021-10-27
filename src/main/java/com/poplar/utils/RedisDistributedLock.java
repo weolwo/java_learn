@@ -27,8 +27,8 @@ public class RedisDistributedLock {
     @Autowired
     private StringRedisTemplate redisTemplate;
 
-    public boolean lock(String key, String clientId, long expireMMillis, long sleepMillis) {
-        if (setRedis(key, clientId, expireMMillis)) {
+    public boolean lock(String key, String clientId, long expireMillis, long sleepMillis) {
+        if (setRedis(key, clientId, expireMillis)) {
             return true;
         }
         int retryTimes = 5;
@@ -40,7 +40,7 @@ public class RedisDistributedLock {
                 logger.debug("lock failed, retrying..." + retryTimes);
                 return false;
             }
-            flag = setRedis(key, clientId, expireMMillis);
+            flag = setRedis(key, clientId, expireMillis);
         }
         return flag;
     }
